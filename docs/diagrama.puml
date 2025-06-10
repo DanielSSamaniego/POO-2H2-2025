@@ -1,0 +1,41 @@
+@startuml
+// Diagrama de clases para el sistema de gestión de biblioteca
+
+class MaterialBiblioteca {
+  - codigo: string
+  - ubicacion: string
+  # titulo: string
+  # anioPublicacion: int
+  # disponible: bool
+  + MaterialBiblioteca(cod, tit, ubi, anio)
+  + ~MaterialBiblioteca()
+  + mostrarInfo() : void
+}
+
+class Libro extends MaterialBiblioteca {
+  - autor: string
+  - numPaginas: int
+  - genero: string
+  + Libro(...)
+  + ~Libro()
+  + mostrarInfo() : void
+}
+
+class Revista extends MaterialBiblioteca {
+  - editorial: string
+  - numero: int
+  - mesPublicacion: int
+  + Revista(...)
+  + ~Revista()
+  + mostrarInfo() : void
+}
+
+class GestorPrestamos {
+  + registrarPrestamo(material: MaterialBiblioteca, usuario: string) : void
+  + procesarDevolucion(material: MaterialBiblioteca) : void
+}
+
+MaterialBiblioteca <|-- Libro
+MaterialBiblioteca <|-- Revista
+GestorPrestamos .. MaterialBiblioteca : friend
+@enduml
