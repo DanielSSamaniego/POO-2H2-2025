@@ -1,5 +1,4 @@
 @startuml
-// Diagrama de clases para el sistema de gestión de biblioteca
 
 class MaterialBiblioteca {
   - codigo: string
@@ -37,5 +36,5 @@ class GestorPrestamos {
 
 MaterialBiblioteca <|-- Libro
 MaterialBiblioteca <|-- Revista
-GestorPrestamos .. MaterialBiblioteca : friend
+GestorPrestamos .. MaterialBiblioteca
 @enduml

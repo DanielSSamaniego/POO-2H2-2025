@@ -13,6 +13,8 @@ public:
     Libro(string cod, string tit, string aut, string gen, int pag, string ubi, int anio);
     virtual ~Libro() override;
     virtual void mostrarInfo() const override;
+    string getTitulo() const { return titulo; }
+    string getAutor() const { return autor; }
 };
 
 #endif
