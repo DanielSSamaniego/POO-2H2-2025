@@ -11,7 +11,7 @@ class MaterialBiblioteca {
   + mostrarInfo() : void
 }
 
-class Libro extends MaterialBiblioteca {
+class Libro {
   - autor: string
   - numPaginas: int
   - genero: string
@@ -20,7 +20,7 @@ class Libro extends MaterialBiblioteca {
   + mostrarInfo() : void
 }
 
-class Revista extends MaterialBiblioteca {
+class Revista {
   - editorial: string
   - numero: int
   - mesPublicacion: int
@@ -34,7 +34,8 @@ class GestorPrestamos {
   + procesarDevolucion(material: MaterialBiblioteca) : void
 }
 
-MaterialBiblioteca <|-- Libro
-MaterialBiblioteca <|-- Revista
-GestorPrestamos .. MaterialBiblioteca
+Libro --|> MaterialBiblioteca
+Revista --|> MaterialBiblioteca
+GestorPrestamos .. MaterialBiblioteca : friend
+
 @enduml

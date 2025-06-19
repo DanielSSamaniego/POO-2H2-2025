@@ -13,6 +13,7 @@ public:
     Revista(string cod, string tit, string ed, int num, int mes, string ubi, int anio);
     virtual ~Revista() override;
     virtual void mostrarInfo() const override;
+    string getTitulo() const { return titulo; }
 };
 
 #endif
